@@ -274,10 +274,10 @@ export default function Homepage() {
                 </div>
                 <div>
                   <p className="text-[#F5F0F6] font-mono font-bold">
-                    YourGameStudio
+                    Betty Studio
                   </p>
                   <p className="text-[#F5F0F6] opacity-60 text-sm">
-                    Developer Indie
+                    Indie Game Developer
                   </p>
                 </div>
               </div>
