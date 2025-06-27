@@ -188,26 +188,46 @@ export default function DeveloperLogs() {
                 </div>
               </div>
               <div className="ml-14">
-                <p className="text-[#F5F0F6] font-mono text-sm leading-relaxed">
-                  {truncateMessage(commit.commit.message)}
-                </p>
-                {commit.commit.message.length > 100 && (
-                  <button
-                    onClick={() => {
-                      const element = document.getElementById(`commit-${commit.sha}`);
-                      if (element) {
-                        element.classList.toggle('hidden');
-                      }
-                    }}
-                    className="text-[#AC5654] text-xs font-mono mt-2 hover:text-[#F5F0F6] transition-colors"
-                  >
-                    Tampilkan lebih banyak...
-                  </button>
-                )}
-                <div id={`commit-${commit.sha}`} className="hidden mt-2">
+                <div id={`commit-${commit.sha}-truncated`}>
+                  <p className="text-[#F5F0F6] font-mono text-sm leading-relaxed">
+                    {truncateMessage(commit.commit.message)}
+                  </p>
+                  {commit.commit.message.length > 100 && (
+                    <button
+                      onClick={() => {
+                        const truncatedElement = document.getElementById(`commit-${commit.sha}-truncated`);
+                        const fullElement = document.getElementById(`commit-${commit.sha}-full`);
+                        if (truncatedElement && fullElement) {
+                          truncatedElement.classList.add('hidden');
+                          fullElement.classList.remove('hidden');
+                        }
+                      }}
+                      className="text-[#AC5654] text-xs font-mono mt-2 hover:text-[#F5F0F6] transition-colors"
+                    >
+                      Tampilkan lebih banyak...
+                    </button>
+                  )}
+                </div>
+                
+                <div id={`commit-${commit.sha}-full`} className="hidden">
                   <p className="text-[#F5F0F6] font-mono text-sm leading-relaxed">
                     {commit.commit.message}
                   </p>
+                  {commit.commit.message.length > 100 && (
+                    <button
+                      onClick={() => {
+                        const truncatedElement = document.getElementById(`commit-${commit.sha}-truncated`);
+                        const fullElement = document.getElementById(`commit-${commit.sha}-full`);
+                        if (truncatedElement && fullElement) {
+                          truncatedElement.classList.remove('hidden');
+                          fullElement.classList.add('hidden');
+                        }
+                      }}
+                      className="text-[#AC5654] text-xs font-mono mt-2 hover:text-[#F5F0F6] transition-colors"
+                    >
+                      Tampilkan lebih sedikit
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

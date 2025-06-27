@@ -38,9 +38,6 @@ export default function Header() {
             >
               GitHub
             </a>
-            <button className="bg-[#AC5654] text-[#F5F0F6] px-3 py-1 rounded font-mono text-sm hover:bg-opacity-80 transition-colors">
-              Ikuti
-            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -81,9 +78,6 @@ export default function Header() {
                 >
                   GitHub
                 </a>
-                <button className="bg-[#AC5654] text-[#F5F0F6] px-3 py-1 rounded font-mono text-sm ml-2">
-                  Ikuti
-                </button>
               </div>
             </div>
           </div>
