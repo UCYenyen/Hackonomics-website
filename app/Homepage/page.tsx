@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Game from "@/components/Game";
 
 export default function Homepage() {
   const [isGameLoaded, setIsGameLoaded] = useState(false);
@@ -74,19 +75,7 @@ export default function Homepage() {
                       </div>
                     </div>
                   ) : (
-                    <div className="w-full h-full bg-[#221C1C] flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-24 h-24 bg-[#AC5654] rounded-lg flex items-center justify-center mx-auto mb-4 animate-pulse">
-                          <span className="text-[#F5F0F6] text-4xl">🎮</span>
-                        </div>
-                        <p className="text-[#F5F0F6] text-lg font-mono mb-2">
-                          [WebGL Game Canvas]
-                        </p>
-                        <p className="text-[#F5F0F6] opacity-60 text-sm font-mono">
-                          Game sedang dimuat...
-                        </p>
-                      </div>
-                    </div>
+                    <Game />
                   )}
                 </div>
 
@@ -402,6 +391,7 @@ export default function Homepage() {
           </div>
         </div>
       </div>
+            <Game/>
     </div>
   );
 }
