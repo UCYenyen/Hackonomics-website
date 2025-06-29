@@ -40,13 +40,14 @@ export default function Homepage() {
 
   return (
     <div className="min-h-screen bg-[#221C1C]">
-      <div className="bg-[#464141] border-b border-[#AC5654]">
+      <div className="bg-[#c7c3c7] border-b border-[#AC5654]">
         <div className="max-w-6xl mx-auto px-4 py-8">
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="lg:w-2/3">
               <div className="bg-[#221C1C] rounded-lg overflow-hidden">
                 <div className="aspect-video bg-[#221C1C] border-2 border-[#AC5654] relative">
                   {!isGameLoaded ? (
+                    // Play button and preview
                     <div
                       className="w-full h-full relative group cursor-pointer"
                       onClick={handlePlayGame}
@@ -391,7 +392,6 @@ export default function Homepage() {
           </div>
         </div>
       </div>
-            <Game/>
     </div>
   );
 }
