@@ -255,7 +255,7 @@ export default function Homepage() {
                     💼 Master Financial Management
                   </h3>
                   <p className="text-[#F5F0F6] mb-4">
-                    From humble beginnings to financial domination, it's all in
+                    From humble beginnings to financial domination, it&apos;s all in
                     your hands. Master the art of balancing risk and reward,
                     optimize your cash flow, and implement rock-solid business
                     practices to forge an unstoppable empire.
