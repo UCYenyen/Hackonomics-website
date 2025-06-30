@@ -1,9 +1,23 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
 
-export default function Game() {
-  const unityRef = useRef<HTMLDivElement>(null);
+const Game = forwardRef(function Game(props, ref) {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useImperativeHandle(ref, () => ({
+    toggleFullscreen() {
+      if (canvasRef.current) {
+        if (!document.fullscreenElement) {
+          canvasRef.current.requestFullscreen().catch((err) => {
+            console.error(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+          });
+        } else {
+          document.exitFullscreen();
+        }
+      }
+    },
+  }));
 
   useEffect(() => {
     // Prevent duplicate script injection
@@ -14,19 +28,21 @@ export default function Game() {
     script.id = 'unity-loader';
     script.src = '/unity/Fundation/Build/Fundation.loader.js';
     script.onload = () => {
-      // @ts-ignore
-      window.createUnityInstance(
-        document.getElementById('unity-canvas'),
-        {
-          dataUrl: '/unity/Fundation/Build/Fundation.data',
-          frameworkUrl: '/unity/Fundation/Build/Fundation.framework.js',
-          codeUrl: '/unity/Fundation/Build/Fundation.wasm',
-          streamingAssetsUrl: '/unity/Fundation/StreamingAssets',
-          companyName: 'Betty', // match your Unity build
-          productName: 'Fundation', // match your Unity build
-          productVersion: '1.0',
-        }
-      );
+      if (canvasRef.current) {
+        // @ts-expect-error window.createUnityInstance is a global function provided by Unity loader
+        window.createUnityInstance(
+          canvasRef.current,
+          {
+            dataUrl: '/unity/Fundation/Build/Fundation.data',
+            frameworkUrl: '/unity/Fundation/Build/Fundation.framework.js',
+            codeUrl: '/unity/Fundation/Build/Fundation.wasm',
+            streamingAssetsUrl: '/unity/Fundation/StreamingAssets',
+            companyName: 'Betty', // match your Unity build
+            productName: 'Fundation', // match your Unity build
+            productVersion: '1.0',
+          }
+        );
+      }
     };
     document.body.appendChild(script);
 
@@ -37,8 +53,9 @@ export default function Game() {
   }, []);
 
   return (
-    <div ref={unityRef} className="w-full h-full flex items-center justify-center bg-black">
+    <div className="w-full h-full flex items-center justify-center bg-black">
       <canvas
+        ref={canvasRef}
         id="unity-canvas"
         width={960}
         height={600}
@@ -46,4 +63,6 @@ export default function Game() {
       />
     </div>
   );
-}
+});
+
+export default Game;

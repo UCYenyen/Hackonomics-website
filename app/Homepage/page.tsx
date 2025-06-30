@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Game from "@/components/Game";
 
 export default function Homepage() {
   const [isGameLoaded, setIsGameLoaded] = useState(false);
   const [copySuccess, setCopySuccess] = useState(false);
+  const gameRef = useRef<{ toggleFullscreen: () => void }>(null);
 
   const handlePlayGame = () => {
     setIsGameLoaded(true);
@@ -18,6 +19,10 @@ export default function Homepage() {
     const url = encodeURIComponent(window.location.href);
     const twitterUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
     window.open(twitterUrl, "_blank", "noopener,noreferrer");
+  };
+
+  const handleFullscreen = () => {
+    gameRef.current?.toggleFullscreen();
   };
 
   const copyToClipboard = async () => {
@@ -76,7 +81,7 @@ export default function Homepage() {
                       </div>
                     </div>
                   ) : (
-                    <Game />
+                    <Game ref={gameRef} />
                   )}
                 </div>
 
@@ -90,7 +95,7 @@ export default function Homepage() {
                           : "bg-[#221C1C] text-[#F5F0F6] hover:bg-[#AC5654]"
                       }`}
                     >
-                      {!isGameLoaded ? "▶ Main" : "⏸ Jeda"}
+                      {!isGameLoaded ? "▶ Main" : "Playing..."}
                     </button>
                     <button
                       onClick={() => setIsGameLoaded(false)}
@@ -100,12 +105,13 @@ export default function Homepage() {
                       🔄 Restart
                     </button>
                   </div>
-                  {/* <button 
+                  <button
+                    onClick={handleFullscreen}
                     className="px-4 py-2 bg-[#221C1C] text-[#F5F0F6] rounded font-mono text-sm hover:bg-[#AC5654] transition-colors"
                     disabled={!isGameLoaded}
                   >
                     ⛶ Layar Penuh
-                  </button> */}
+                  </button>
                 </div>
               </div>
             </div>
@@ -300,7 +306,7 @@ export default function Homepage() {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-[#F5F0F6] opacity-80">Engine</span>
-                  <span className="text-[#AC5654] font-mono">WebGL</span>
+                  <span className="text-[#AC5654] font-mono">Unity</span>
                 </div>
               </div>
             </div>
