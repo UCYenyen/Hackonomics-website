@@ -74,7 +74,7 @@ export default function DeveloperLogs() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#221C1C] p-8">
+      <div className="min-h-screen bg-[#d1d1d1] p-8">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl font-bold text-[#F5F0F6] mb-8 font-mono">Log Developer</h1>
           <div className="flex items-center justify-center py-12">
@@ -110,12 +110,12 @@ export default function DeveloperLogs() {
   }
 
   return (
-    <div className="min-h-screen bg-[#221C1C] p-8">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-[#d1d1d1] p-4 sm:p-8">
+      <div className="max-w-4xl mx-auto bg-[#221C1C] p-6 sm:p-8 rounded-lg shadow-lg">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-[#F5F0F6] mb-4 font-mono">Log Developer</h1>
+          <h1 className="text-3xl font-bold text-[#F5F0F6] mb-4 font-mono">Developer Logs</h1>
           <p className="text-[#F5F0F6] opacity-80 font-mono">
-            Ikuti perkembangan pengembangan Financial Tycoon 8-Bit melalui commits GitHub kami
+            Follow the development progress of Fundation through our GitHub commits
           </p>
         </div>
 
@@ -138,7 +138,7 @@ export default function DeveloperLogs() {
               rel="noopener noreferrer"
               className="bg-[#221C1C] text-[#F5F0F6] px-4 py-2 rounded font-mono text-sm hover:bg-[#AC5654] transition-colors"
             >
-              Lihat di GitHub →
+              View on GitHub →
             </a>
           </div>
         </div>
@@ -204,7 +204,7 @@ export default function DeveloperLogs() {
                       }}
                       className="text-[#AC5654] text-xs font-mono mt-2 hover:text-[#F5F0F6] transition-colors"
                     >
-                      Tampilkan lebih banyak...
+                      Show more...
                     </button>
                   )}
                 </div>
@@ -225,7 +225,7 @@ export default function DeveloperLogs() {
                       }}
                       className="text-[#AC5654] text-xs font-mono mt-2 hover:text-[#F5F0F6] transition-colors"
                     >
-                      Tampilkan lebih sedikit
+                      Show less
                     </button>
                   )}
                 </div>
@@ -234,12 +234,12 @@ export default function DeveloperLogs() {
           ))}
         </div>
 
-        {commits.length === 0 && (
+        {commits.length === 0 && !loading && (
           <div className="text-center py-12">
             <div className="w-16 h-16 bg-[#464141] rounded-full flex items-center justify-center mx-auto mb-4">
               <span className="text-[#F5F0F6] text-2xl">📝</span>
             </div>
-            <p className="text-[#F5F0F6] font-mono">Tidak ada commits ditemukan</p>
+            <p className="text-[#F5F0F6] font-mono">No commits found</p>
           </div>
         )}
       </div>

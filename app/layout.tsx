@@ -15,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id">
-      <body className="bg-[#221C1C] text-[#F5F0F6] min-h-screen font-mono">
+      <body className="bg-[#d1d1d1] text-[#F5F0F6] min-h-screen font-mono">
         <Header />
         <main>
           {children}
