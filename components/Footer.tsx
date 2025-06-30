@@ -8,70 +8,38 @@ export default function Footer() {
           <div>
             <h4 className="text-[#F5F0F6] font-bold mb-3 font-mono">itch.game</h4>
             <ul className="space-y-1">
-              <li><Link href="/" className="text-[#F5F0F6] opacity-80 hover:text-[#AC5654] font-mono">Game</Link></li>
-              <li><Link href="/developer-logs" className="text-[#F5F0F6] opacity-80 hover:text-[#AC5654] font-mono">Log Developer</Link></li>
-              <li><a href="#" className="text-[#F5F0F6] opacity-80 hover:text-[#AC5654] font-mono">Tentang</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="text-[#F5F0F6] font-bold mb-3 font-mono">Pengembangan</h4>
-            <ul className="space-y-1">
-              <li>
+              <li><Link href="/" className="text-[#F5F0F6] opacity-80 hover:opacity-100 transition-opacity font-mono">Game</Link></li>
+              <li><Link href="/developer-logs" className="text-[#F5F0F6] opacity-80 hover:opacity-100 transition-opacity font-mono">Log Developer</Link></li>
+               <li>
                 <a 
                   href="https://github.com/jaysn/Hackonomics-website" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-[#F5F0F6] opacity-80 hover:text-[#AC5654] font-mono"
+                  className="text-[#F5F0F6] opacity-80 hover:opacity-100 transition-opacity font-mono"
                 >
                   Repository GitHub
                 </a>
               </li>
-              <li>
-                <a 
-                  href="https://github.com/jaysn/Hackonomics-website/issues" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-[#F5F0F6] opacity-80 hover:text-[#AC5654] font-mono"
-                >
-                  Laporkan Masalah
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="https://github.com/jaysn/Hackonomics-website/releases" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-[#F5F0F6] opacity-80 hover:text-[#AC5654] font-mono"
-                >
-                  Rilis
-                </a>
-              </li>
             </ul>
           </div>
           
           <div>
-            <h4 className="text-[#F5F0F6] font-bold mb-3 font-mono">Komunitas</h4>
-            <ul className="space-y-1">
-              <li><a href="#" className="text-[#F5F0F6] opacity-80 hover:text-[#AC5654] font-mono">Discord</a></li>
-              <li><a href="#" className="text-[#F5F0F6] opacity-80 hover:text-[#AC5654] font-mono">Twitter</a></li>
-              <li><a href="#" className="text-[#F5F0F6] opacity-80 hover:text-[#AC5654] font-mono">Masukan</a></li>
-            </ul>
+            
+              
           </div>
           
           <div>
-            <h4 className="text-[#F5F0F6] font-bold mb-3 font-mono">Dukungan</h4>
-            <ul className="space-y-1">
-              <li><a href="#" className="text-[#F5F0F6] opacity-80 hover:text-[#AC5654] font-mono">Kontak</a></li>
-              <li><a href="#" className="text-[#F5F0F6] opacity-80 hover:text-[#AC5654] font-mono">Privasi</a></li>
-              <li><a href="#" className="text-[#F5F0F6] opacity-80 hover:text-[#AC5654] font-mono">Syarat</a></li>
-            </ul>
+           
+          </div>
+          
+          <div>
+            
           </div>
         </div>
         
         <div className="border-t border-[#221C1C] mt-6 pt-6 text-center">
           <p className="text-[#F5F0F6] opacity-60 font-mono text-xs">
-            © 2024 Financial Tycoon 8-Bit - Pengembangan Game Open Source
+            © 2024 Financial Tycoon 8-Bit - Fundation
           </p>
         </div>
       </div>

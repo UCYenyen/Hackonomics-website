@@ -20,10 +20,10 @@ const Game = forwardRef(function Game(props, ref) {
   }));
 
   useEffect(() => {
-    // Prevent duplicate script injection
+    
     if (document.getElementById('unity-loader')) return;
 
-    // Create the script tag for the Unity loader
+    
     const script = document.createElement('script');
     script.id = 'unity-loader';
     script.src = '/unity/Fundation/Build/Fundation.loader.js';
@@ -37,8 +37,8 @@ const Game = forwardRef(function Game(props, ref) {
             frameworkUrl: '/unity/Fundation/Build/Fundation.framework.js',
             codeUrl: '/unity/Fundation/Build/Fundation.wasm',
             streamingAssetsUrl: '/unity/Fundation/StreamingAssets',
-            companyName: 'Betty', // match your Unity build
-            productName: 'Fundation', // match your Unity build
+            companyName: 'Betty', 
+            productName: 'Fundation', 
             productVersion: '1.0',
           }
         );
@@ -46,7 +46,7 @@ const Game = forwardRef(function Game(props, ref) {
     };
     document.body.appendChild(script);
 
-    // Cleanup on unmount
+    
     return () => {
       script.remove();
     };

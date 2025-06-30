@@ -191,12 +191,27 @@ export default function Homepage() {
                   <span className="px-2 py-1 bg-[#464141] text-[#F5F0F6] text-xs rounded font-mono">
                     strategy
                   </span>
-                  <span className="px-2 py-1 bg-[#464141] text-[#F5F0F6] text-xs rounded font-mono">
-                    management
-                  </span>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4 py-8">
+        <div className="bg-[#464141] rounded-lg p-6">
+          <h3 className="text-[#f5f5f5] font-mono text-lg mb-4 text-center">
+            🎥 Gameplay Walkthrough
+          </h3>
+          <div className="aspect-video relative">
+            <iframe
+              className="absolute top-0 left-0 w-full h-full rounded-lg border-2 border-[#AC5654]"
+              src="https://www.youtube.com/embed/ekBGEGY_2WI"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
       </div>
