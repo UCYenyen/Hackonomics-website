@@ -83,15 +83,17 @@ export default function Homepage() {
                       </div>
                     </div>
                   ) : (
-                    <Game ref={gameRef} />
+                    <div className="w-full h-full overflow-hidden">
+                      <Game ref={gameRef} />
+                    </div>
                   )}
                 </div>
 
-                <div className="p-4 bg-[#464141] flex justify-between items-center">
-                  <div className="flex gap-2">
+                <div className="p-4 bg-[#464141] flex flex-col sm:flex-row sm:justify-between items-center gap-2">
+                  <div className="flex gap-2 w-full sm:w-auto">
                     <button
                       onClick={handlePlayGame}
-                      className={`px-4 py-2 rounded font-mono text-sm transition-colors ${
+                      className={`flex-grow px-4 py-2 rounded font-mono text-sm transition-colors ${
                         !isGameLoaded
                           ? "bg-[#AC5654] text-[#F5F0F6] hover:bg-opacity-80"
                           : "bg-[#221C1C] text-[#F5F0F6] hover:bg-[#AC5654]"
@@ -101,7 +103,7 @@ export default function Homepage() {
                     </button>
                     <button
                       onClick={() => setIsGameLoaded(false)}
-                      className="px-4 py-2 bg-[#221C1C] text-[#F5F0F6] rounded font-mono text-sm hover:bg-[#AC5654] transition-colors"
+                      className="flex-grow px-4 py-2 bg-[#221C1C] text-[#F5F0F6] rounded font-mono text-sm hover:bg-[#AC5654] transition-colors"
                       disabled={!isGameLoaded}
                     >
                       🔄 Restart
@@ -109,7 +111,7 @@ export default function Homepage() {
                   </div>
                   <button
                     onClick={handleFullscreen}
-                    className="px-4 py-2 bg-[#221C1C] text-[#F5F0F6] rounded font-mono text-sm hover:bg-[#AC5654] transition-colors"
+                    className="w-full sm:w-auto px-4 py-2 bg-[#221C1C] text-[#F5F0F6] rounded font-mono text-sm hover:bg-[#AC5654] transition-colors"
                     disabled={!isGameLoaded}
                   >
                     ⛶ Fullscreen

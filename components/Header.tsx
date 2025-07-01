@@ -19,7 +19,7 @@ export default function Header() {
           </Link>
 
           {/* Navigation links on the right */}
-          <nav className="flex items-center space-x-6">
+          <nav className="hidden md:flex items-center space-x-6">
             <Link
               href="/"
               className="text-[#F5F0F6] hover:bg-[#8e3e3c] hover:text-[#F5F0F6] px-3 py-1 rounded transition-colors font-mono text-sm"
